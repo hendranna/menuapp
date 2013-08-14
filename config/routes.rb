@@ -1,8 +1,17 @@
 Menuapp::Application.routes.draw do
-  authenticated :user do
-    root :to => 'home#index'
+  resources :dishes
+  resources :menus do
+      member do
+      put :add_dish
+    end
   end
-  root :to => "home#index"
+
+
+
+  authenticated :user do
+    root :to => 'menus#index'
+  end
+  root :to => "menus#index"
   devise_for :users
   resources :users
 end
