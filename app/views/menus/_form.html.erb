@@ -4,6 +4,9 @@
   <div class="form-inputs">
     <%= f.input :name %>
   </div>
+
+  <%= f.collection_select(:dish_ids, @dishes,
+:id,:name)%>
   
   <div class="form-actions">
     <%= f.button :submit %>

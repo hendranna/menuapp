@@ -1,5 +1,6 @@
 Menuapp::Application.routes.draw do
   resources :dishes
+  
   resources :menus do
       member do
       put :add_dish

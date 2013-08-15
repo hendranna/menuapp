@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <h1>Name</h1>
   <%= @menu.name %>
+  <h2>Dishes</h2>
+  <% @menu.dishes.each do |dish| %>
+  	<%= dish.name %>
+  	<% end %>
 </p>
 
- <%= link_to 'Add Dish', new_dish_path(@menu), :class => "btn btn-success btn-mini" %>
 
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>
